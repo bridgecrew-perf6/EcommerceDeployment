@@ -21,7 +21,7 @@ use App\Http\Controllers\OrderController;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::middleware(['cors'])->group(function () {
+// Route::middleware(['cors'])->group(function () {
     // our routes to be protected will go in here
     Route::post('/logout',[ApiAuthController::class,'logout'])->name('logout.api');
     Route::post('/order',[OrderController::class,'store']);
@@ -35,7 +35,7 @@ Route::middleware(['cors'])->group(function () {
     Route::get('/categories',[ApiProductController::class,'getCategories']);
     Route::get('/products/{category_id}',[ApiProductController::class,'getProductsByCategory']);
     Route::get('/allproducts',[ApiProductController::class,'getAllProducts']);
-});
+// });
 
 
 
