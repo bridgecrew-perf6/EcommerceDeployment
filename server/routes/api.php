@@ -7,6 +7,7 @@ use App\Http\Controllers\ApiProductController;
 
 
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\FeedbackController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -37,5 +38,7 @@ Route::post('/login',[ApiAuthController::class,'login']);
 Route::get('/categories',[ApiProductController::class,'getCategories']);
 Route::get('/products/{category_id}',[ApiProductController::class,'getProductsByCategory']);
 Route::get('/allproducts',[ApiProductController::class,'getAllProducts']);
+Route::post('/feedback/store',[FeedbackController::class,'store']);
+Route::get('/feedback/{id}',[FeedbackController::class,'showFeedbacks_With_users']);
 
 

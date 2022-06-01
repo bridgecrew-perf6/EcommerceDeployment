@@ -67,7 +67,12 @@ class OrderController extends BaseController
     // show all order fro cutomer 
     public function showAllOrder($id)
     {
-
+        $validator = Validator::make(['id'=>$id], [
+            'id' => 'required|integer',
+        ]);
+        if ($validator->fails()) {
+            return response(['errors' => $validator->errors()->all()], 422);
+        }
         $order = Order::where('order_user_id', $id)->get();
         // loop for order and get order id 
         foreach ($order as $key => $value) {
@@ -83,7 +88,12 @@ class OrderController extends BaseController
     // show all order item for order using order id 
     public function showOrderItems($id)
     {
-
+        $validator = Validator::make(['id'=>$id], [
+            'id' => 'required|integer',
+        ]);
+        if ($validator->fails()) {
+            return response(['errors' => $validator->errors()->all()], 422);
+        }
         $order = Order::find($id);
         if (!$order) {
             $response = ["message" => 'Order does not exist'];
@@ -96,13 +106,19 @@ class OrderController extends BaseController
     // delete one order with all related order item
     public function deleteOrder($id)
     {
+        $validator = Validator::make(['id'=>$id], [
+            'id' => 'required|integer',
+        ]);
+        if ($validator->fails()) {
+            return response(['errors' => $validator->errors()->all()], 422);
+        }
         $order = Order::find($id);
         if (!$order) {
             $response = ["message" => 'Order does not exist'];
             return response($response, 422);
         }
         $orderItems = OrderItem::where('order_id', $id)->delete();
-        echo "hello world ";
+        
         $order->delete();
         return response(['success' => 'Order deleted successfully'], 200);
     }

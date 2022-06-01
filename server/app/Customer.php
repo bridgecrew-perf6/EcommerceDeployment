@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Order;
+use App\Feedback;
 class Customer extends Model
 {
     protected $fillable = [
@@ -21,6 +22,9 @@ class Customer extends Model
     // relationship between order and customer
     public function orders(){
         return $this->hasMany(Order::class);
+    }
+    public function feedback(){
+        return $this->hasMany(Feedback::class);
     }
     
 }
