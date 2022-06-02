@@ -25,6 +25,7 @@ $app = new Illuminate\Foundation\Application(
 | incoming requests to this application from both the web and CLI.
 |
 */
+$app->useStoragePath(env('APP_STORAGE_PATH', storage_path()));
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
