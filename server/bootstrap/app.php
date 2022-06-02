@@ -51,6 +51,6 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
-$app->instance('path.storage', '/storage2');
+$app->instance('path.storage', 'http://ecommerceapp0040.herokuapp.com/storage2');
 
 return $app;
