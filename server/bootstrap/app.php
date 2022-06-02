@@ -11,7 +11,7 @@
 |
 */
 
-$app->useStoragePath(__DIR__ . '/storage2');
+
 
 
 $app = new Illuminate\Foundation\Application(
@@ -28,6 +28,8 @@ $app = new Illuminate\Foundation\Application(
 | incoming requests to this application from both the web and CLI.
 |
 */
+
+$app->useStoragePath(__DIR__ . '/storage2');
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
