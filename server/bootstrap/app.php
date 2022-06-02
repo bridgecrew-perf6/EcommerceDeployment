@@ -51,5 +51,6 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
+$app->instance('path.storage', '/storage2');
 
 return $app;
