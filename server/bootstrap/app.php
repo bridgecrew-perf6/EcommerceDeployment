@@ -29,7 +29,7 @@ $app = new Illuminate\Foundation\Application(
 |
 */
 
-$app->useStoragePath(__DIR__ . '/storage');
+//$app->useStoragePath(__DIR__ . '/storage');
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
