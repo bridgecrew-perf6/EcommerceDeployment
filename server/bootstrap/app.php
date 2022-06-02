@@ -56,6 +56,6 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
-//$app->useStoragePath(__DIR__ . '/storage2');
+$app->useStoragePath(__DIR__ . '/storage2');
 
 return $app;
