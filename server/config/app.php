@@ -122,7 +122,7 @@ return [
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
-    'app_storage' => env('APP_STORAGE', storage_path()),
+    //'app_storage' => env('APP_STORAGE', storage_path()),
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
